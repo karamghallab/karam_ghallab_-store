@@ -1,0 +1,68 @@
+:root {
+  --ink: #17211e;
+  --muted: #64716c;
+  --paper: #f7f6ef;
+  --cream: #fcfbf7;
+  --pine: #155e52;
+  --lime: #d4ef58;
+  --line: #d9ded7;
+  --card-bg: #fcfbf7;
+  --danger: #b42318;
+}
+
+[data-theme="dark"] {
+  --ink: #f0f4f1;
+  --muted: #a0acab;
+  --paper: #111816;
+  --cream: #18221f;
+  --pine: #2dd4bf;
+  --lime: #acc123;
+  --line: #263531;
+  --card-bg: #18221f;
+  --danger: #ef4444;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: "DM Sans", sans-serif; color: var(--ink); background: var(--paper); transition: background .3s ease, color .3s ease; }
+button, input, select, textarea { font: inherit; }
+button:disabled { cursor: not-allowed; opacity: .58; }
+.app-shell { width: 100%; min-height: calc(100 * min(var(--vh, 1vh), 1vh)); }
+.brand-type { font-family: "Playfair Display", serif; letter-spacing: -0.05em; }
+.grain {
+  background-image: radial-gradient(rgba(21, 94, 82, .09) .7px, transparent .7px);
+  background-size: 12px 12px;
+}
+.canva-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--line);
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+.canva-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 32px rgba(0, 0, 0, .15);
+  border-color: var(--pine);
+}
+.filter-button[aria-pressed="true"] {
+  background: var(--pine);
+  color: #fff;
+  border-color: var(--pine);
+}
+.field-control:focus {
+  outline: 3px solid rgba(212, 239, 88, .65);
+  border-color: var(--pine);
+}
+.hidden-panel { display: none !important; }
+.toast-show { opacity: 1 !important; transform: translateY(0) !important; pointer-events: auto !important; }
+.reveal { animation: reveal .5s ease both; }
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.owner-route {
+  font-size: .72rem;
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--line);
+}
+.owner-route:hover, .owner-route:focus-visible { color: var(--pine); }
